@@ -20,7 +20,7 @@ chat gpt:
 
 notes:
 - I worry our detector will be biased against human good quality essays
-- we probably need to cute the title of the essay in the machine generated data
+- we probably need to cut the title of the essay in the machine generated data
 - would be good to extract a topic title from the other essays
 - would be good to have encoding for whether the essay is addressing someone or not
 - would be good to have encoding for whether it is a critical analysis text (so mentioning "the author")
