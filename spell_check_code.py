@@ -32,7 +32,7 @@ word_set = set(words_into_list)
 
 # The following function takes an essay and returns the number of spelling mistakes in it.
 
-def mispellings(essay):
+def misspellings(essay):
     errors=0
     clean_essay = preprocess_spelling(essay)
     for word in clean_essay: #loop through words in each essay
