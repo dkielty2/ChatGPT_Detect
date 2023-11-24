@@ -4,7 +4,7 @@ import torch
 
 import os
 from preprocessing import preprocess,  metrics, w2v
-remap = {'a':'the', 'and':'also', 'of':'in', 'to':'at'}
+remap = {'a':'an', 'and':'also', 'of':'in', 'to':'at'}
 
 def run(filepath, outpath):
     # read the raw text file
@@ -39,19 +39,20 @@ def run(filepath, outpath):
     
     # write to the outfile
     metric_cols = ('"%s",' * len(met))%tuple(met)
-    write_out = ' "%s", "%s", '%(filepath, unique_missing) + metric_cols + '\n'
+    write_out = '"%s","%s","%s",'%(filepath," ".join(essay_words), unique_missing) + metric_cols + '\n'
     with open(outpath, 'a') as f:
         f.write(write_out)
         
     return torch.from_numpy(vecs).reshape(-1,300)
 
-if __name__=='__main__':
+if __name__=='__main__': # took about an hour to run on all the human training essays
     texts_dir = 'data/train/'
+    out_file = 'data/train_human_metrics.csv'
     fnames = os.listdir(texts_dir)
-    out_file = 'train_metrics.csv'
+    
     
     with open(out_file, 'w') as f:
-        f.write('"file","processed_text","missing_words", "met1","met2", "met3", "met4", "met5",\n')
+        f.write('"file","processed_text","missing_words","met1","met2","met3","met4","met5",\n')
     
     
     Tensor_list = []
