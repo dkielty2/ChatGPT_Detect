@@ -21,7 +21,7 @@ from retry.api import retry_call
 
 #choose where to start and end making GPT essays in file_list: 
 #start = 4000
-start = 4173
+start = 4471
 end = 8000
 
 #initialize global variable i at the start
@@ -98,8 +98,9 @@ if __name__=='__main__':
     while i<=end:
         try:
             retry_call(gen_essays())
-        except APIError:# we got a timeout error
+        except openai.error.APIError:# we got a timeout error
             print('Timed out at ', datetime.datetime.now())
+            print(i,'th prompt')
             time.sleep(10)# pause for 10 sec
             continue # start back to the top of loop
     
