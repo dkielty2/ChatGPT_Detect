@@ -1,0 +1,15 @@
+The Electoral Vote: A System for Electing Our President
+
+In the United States, the process of electing our president is not a direct one, but rather a system called the Electoral College. This unique system combines the popular vote with the electoral vote to determine who will become the next leader of our nation.
+
+The popular vote is when citizens across the country cast their vote for their preferred candidate. Each state has a certain number of electoral votes based on their representation in Congress, with the total number of electors being 538. This means that to win the presidency, a candidate must secure at least 270 electoral votes.
+
+The Electoral College functions as a way to balance the power between states. This means that a candidate who wins the majority of the popular vote in a state will receive all of that state's electoral votes. For example, if a candidate were to win the popular vote in California, which has 55 electoral votes, they would receive all 55 of those votes. This creates a system where candidates must consider the needs and wants of citizens across different states, not just the most populous ones.
+
+This system also ensures that smaller states still have a voice in the election. While heavily populated states like California and Texas have a lot of electoral votes, smaller states like Wyoming or Vermont still have a say in the final outcome. Without the Electoral College, candidates might only focus on campaigning in the largest states, potentially neglecting the needs of smaller communities.
+
+Critics argue that the Electoral College can sometimes result in a candidate winning the presidency without winning the popular vote. This has happened five times throughout history, with the most recent being the 2016 election. In this case, some argue that the system is undemocratic, as the candidate who received the most votes from the people did not become president.
+
+However, defenders of the Electoral College argue that it prevents candidates from focusing solely on densely populated urban areas and ensures that the interests of rural communities are not ignored. They believe that the system protects the smaller states from being overshadowed by the larger ones and that it allows for a more balanced representation of the entire nation.
+
+In conclusion, the Electoral College is a unique system that combines the popular vote with the electoral vote to determine our president. While it has its flaws and critics, it provides a way to balance power between states and ensure that the voices of smaller communities are still heard. Whether one agrees with the system or not, it remains an integral part of the democratic process in the United States.

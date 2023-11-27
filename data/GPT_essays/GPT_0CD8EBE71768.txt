@@ -1,0 +1,17 @@
+The Electoral College: A Different Way to Decide the President
+
+In the United States, we have a unique method of electing our president called the Electoral College. It may seem confusing at first, but bear with me as I explain how this system works.
+
+Every four years, the people of each state get to cast their vote for the candidate they want to be president. These votes, known as the popular vote, are then tallied up. But here's where it gets interesting – it's not the popular vote that decides who becomes the president, it's the Electoral College vote.
+
+The Electoral College is made up of individuals called electors who represent each state. The number of electors is determined by the population of the state, with each state having a minimum of three electors. The total number of electors in the Electoral College is 538.
+
+So, how does the Electoral College vote decide the president? Well, each state is allocated a certain number of electors based on its population, and these electors are expected to vote for the candidate that won the popular vote in their state. Let's say Candidate A wins the popular vote in State X; the electors from that state will then cast their votes for Candidate A.
+
+The number of electors needed to win the presidency is 270. The candidate who reaches this number or more wins the election and becomes our president. Some argue that this system is not fair because it is possible for a candidate to win the popular vote but lose the Electoral College vote, as we saw in the 2016 election. In that election, Hillary Clinton won the popular vote, but Donald Trump won the Electoral College vote and became president.
+
+Despite its flaws, the Electoral College has its merits. It ensures that smaller states have a say in the election by giving them a minimum of three electors, regardless of their population. This prevents candidates from focusing solely on the most populous states and neglecting the concerns of the smaller ones.
+
+Additionally, the Electoral College helps to maintain the two-party system we have in the United States. Candidates must appeal to a wide range of people across different states to gain enough Electoral College votes to win. This encourages candidates to form broad coalitions and work towards consensus. 
+
+In conclusion, the Electoral College is a unique way of deciding the president that incorporates both the popular vote and state representation. While it may have its flaws, it ensures that all states, big or small, have a voice in the election process. It is a system designed to encourage candidates to seek support from a broad base of the population, rather than focusing on specific regions or demographics.
