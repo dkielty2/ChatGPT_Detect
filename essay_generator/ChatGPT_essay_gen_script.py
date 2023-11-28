@@ -20,13 +20,11 @@ openai.api_key = open_ai_key
 from retry.api import retry_call
 
 #choose where to start and end making GPT essays in file_list: 
-#start = 4000
-start = 4471
-end = 8000
+start = 1750
+end = 4000
 
 #initialize global variable i at the start
 i = start
-
 
 class chatAI:
     """
@@ -68,7 +66,7 @@ def gen_essays():
 if __name__=='__main__':
     #make list of human essays file names
 
-    data_path = '../data/'
+    data_path = '../ChatGPT_Detect/data/'
     folder_path = data_path + 'train'
 
     file_list = [file for file in os.listdir(folder_path) if os.path.isfile(os.path.join(folder_path, file))]
@@ -98,8 +96,18 @@ if __name__=='__main__':
     while i<=end:
         try:
             retry_call(gen_essays())
-        except openai.error.APIError:# we got a timeout error
+        except openai.error.APIError:# we got an API error
+            print('API error at ', datetime.datetime.now())
+            print(i,'th prompt')
+            time.sleep(10)# pause for 10 sec
+            continue # start back to the top of loop
+        except openai.error.Timeout:# we got a timeout error
             print('Timed out at ', datetime.datetime.now())
+            print(i,'th prompt')
+            time.sleep(10)# pause for 10 sec
+            continue # start back to the top of loop
+        except openai.error.APIConnectionError:
+            print('Connection error at ', datetime.datetime.now())
             print(i,'th prompt')
             time.sleep(10)# pause for 10 sec
             continue # start back to the top of loop

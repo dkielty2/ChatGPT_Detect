@@ -1,0 +1,11 @@
+Cars have come a long way since they were first invented. Now, there's a new kind of car on the road - the driverless car! These cars are special because they don't need a human driver to get from one place to another. They are equipped with advanced sensors and technology that allows them to navigate the roads safely.
+
+One of the main goals of driverless cars is to improve safety. With human drivers, there is always a chance for human error, like not paying attention or getting distracted. Driverless cars, on the other hand, are programmed to constantly be aware of their surroundings and make quick decisions to avoid accidents. They can detect obstacles in the road and adjust their speed or direction accordingly.
+
+This new generation of cars also has the potential to make our roads less congested. Since driverless cars can communicate with each other, they can coordinate their movements and drive closer together without the need for human reaction time. This means more cars can fit on the road, reducing traffic and making our commutes quicker and more efficient.
+
+The key to the success of driverless cars lies in their sensors. These sensors can detect everything from pedestrians to other vehicles on the road. They use a combination of cameras, radars, and lasers to gather information about the car's environment. This allows the car to know when to brake, accelerate, or change lanes to ensure a safe and smooth ride.
+
+Braking is one of the most important functions of a driverless car. When a sensor detects an obstacle in the car's path, it sends a signal to the car's computer system. The computer then calculates the safest and most efficient way to avoid the obstacle. It can adjust the brakes to slow down or come to a complete stop if necessary.
+
+In conclusion, driverless cars are an exciting development in the automotive industry. They can greatly improve safety on the roads by eliminating human error. With their advanced sensors and technology, they can navigate the roads with precision and efficiency. As the next generation of cars, they have the potential to revolutionize our transportation system and make our roads safer for everyone.

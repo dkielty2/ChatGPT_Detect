@@ -1,0 +1,13 @@
+The Electoral System: How Could It Work?
+
+The electoral system is like an old machine that needs an update. Let's talk about how this vote-taking system could work, something that even a 6th through 12th grader can understand.
+
+Firstly, the outdated way of casting a vote through paper ballots needs to go. We need to embrace technology and let electronic voting machines take over. These machines would not only be faster but also more accurate. They could work by allowing voters to select their preferred candidates on a touchscreen interface, ensuring that each vote is recorded accurately.
+
+But electronic voting is not the only update we need. Our current system focuses solely on the popular vote, where the person with the most votes wins. But what if there are multiple candidates, and no one receives a majority of the votes? In such cases, a runoff election could be implemented to ensure that the winner truly represents the majority. Instead of having multiple rounds of voting, an instant runoff could be conducted, where voters rank their preferred candidates. If one candidate receives more than 50% of the first-choice votes, they are declared the winner. However, if no candidate meets the threshold, the candidate with the fewest first-choice votes would be eliminated, and their second-choice votes are redistributed. This process continues until one candidate gains a majority – a fair and effective way to elect a representative.
+
+Moreover, our electoral system should also be more inclusive. One way to achieve this is by lowering the voting age to 16. Many 16 to 18-year-olds are involved in their communities and have strong opinions on various issues. By allowing them to vote, we are acknowledging their voices and perspectives, ensuring that the elected representatives truly reflect the people they serve.
+
+In addition, we need to address the issue of voter turnout. To encourage more people to vote, a mandatory voting system, like the one in Australia, could be considered. This system requires all eligible citizens to cast their vote, thereby increasing participation and making sure that everyone's voice is heard. Penalties could be introduced for those who fail to vote without a valid reason. Although this may seem extreme, it creates a sense of responsibility and strengthens democracy.
+
+In conclusion, our electoral system is an old machine desperately in need of an update. By introducing electronic voting machines, adopting an instant runoff system, lowering the voting age, and considering mandatory voting, we can create a more modern and inclusive system. It is in our hands to make these changes and build a truly fair and representative democracy. Let's work together to ensure that everyone's vote counts!
