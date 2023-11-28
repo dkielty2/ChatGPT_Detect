@@ -37,11 +37,18 @@ def load_data(tensor_path='data/train_human_tensor.pt', metrics_path = 'data/tra
 def get_data():
     
     # load human 
-    tensors,met = load_data(tensor_path='data/train_human_tensor.pt', metrics_path = 'data/train_human_metrics.csv', N_metrics = 5)
+    tensors1,met1 = load_data(tensor_path='data/train_human_tensor.pt', metrics_path = 'data/train_human_metrics.csv', N_metrics = 5)
     # first col is GPT, second is human
-    y = torch.cat((torch.zeros((1,len(tensors)) ), torch.ones((1,len(tensors)) ))).T
+    y1 = torch.cat((torch.zeros((1,len(tensors)) ), torch.ones((1,len(tensors)) ))).T
     
+    # load GPT
+    tensors2,met2 = load_data(tensor_path='data/train_GPT_tensor.pt', metrics_path = 'data/train_GPT_metrics.csv', N_metrics = 5)
+    # first col is GPT, second is human
+    y2 = torch.cat((torch.ones((1,len(tensors)) ), torch.zeros((1,len(tensors)) ))).T
     
+    tensors = tensors1+tensors2
+    met = np.concatenate((met1,met2), axis=0)
+    y = torch.cat((y1,y2), axis=0)
     return (tensors,met),y
 
 def run_model(tensor_list, met_arr,inds):
@@ -121,7 +128,12 @@ if __name__=='__main__':
         y_true=y[test_inds]
         epoch_loss.append([np.mean(batch_loss), loss(y_pred,y_true)])
     
-    with open('train_loss_seed%s.npy'%seed, 'wb') as f:
+    # save the loss
+    with open('training/train_loss_seed%s.npy'%seed, 'wb') as f:
         np.save(f,np.array(epoch_loss))
+    
+    # save the trained model weights
+    model_weights_path = 'training/model_weights_seed%s.pt'%seed
+    torch.save(model.state_dict(), model_weights_path)
     
     print('Done.')
