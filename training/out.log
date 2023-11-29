@@ -1,0 +1,10 @@
+max_split_size_mb:2048
+Device: cuda
+16  CPUs available
+Loaded Data, 29518 essays
+Starting epoch 0
+	 did batch 0
+	 did batch 100
+	 did batch 200
+	 did batch 300
+	 did batch 400

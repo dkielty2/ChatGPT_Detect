@@ -154,22 +154,26 @@ def train_epoch(tensor_list, met_tensor, y, train_inds, batch_size = 50):
         batch_num+=1
     return np.array(batch_loss)
 
-def test_pred(tensor_list, met_tensor, inds):
+def test_pred_loss(tensor_list, met_tensor,y, test_inds):
     """
     The prediction arr is too damn big, 
     so we'll just loop thru it
     """
-    ypreds = []
-    for i in inds:
-        ypred = run_model(tensor_list, met_tensor,np.array([i]))
-        ypreds.append(ypred)
-    
-    return torch.cat(ypreds, axis=0)
+    #y_pred = run_model(tensor_list, metrics,test_inds)
+    y_preds = []
+    for ind in test_inds:
+        x_text = tensor_list[ind].reshape(-1,1,300)
+        x_met = met_tensor[ind].reshape(1,5)
+        y_prob = model(x_text,x_met)
+        y_preds.append(y_prob)
+        torch.cuda.empty_cache()
+    L = loss(torch.cat(y_preds, axis=0),y[test_inds])
+    return L.item()
 
 if __name__=='__main__':
     seed = 8675309 # for train test splitting
     num_epochs = 15
-    batch_size = 50
+    batch_size = 25
     # there are some essays with a lot of words, which takes up a lot of memory
     
     # load data
@@ -188,22 +192,22 @@ if __name__=='__main__':
         
         # do a whole epoch of training
         batch_loss = train_epoch(tensor_list, metrics, y, train_inds, batch_size = batch_size)
-        
+        # save the trained model weights at each epoch
+        print('Saving model weights')
+        model_weights_path = base_dir+'training/model_weights_epoch%i_seed%s_batch%i.pt'%(i, seed, batch_size)
+        torch.save(model.state_dict(), model_weights_path)
         # get prediction from test set (test set is too damn large)
-        #y_pred = run_model(tensor_list, metrics,test_inds)
-        y_pred = test_pred(tensor_list, metrics,test_inds)
-        y_true=y[test_inds]
+        print('Getting test set loss')
+        test_loss = test_pred_loss(tensor_list, metrics, y, test_inds)
         
         # save epoch loss
-        epoch_loss.append([np.mean(batch_loss), loss(y_pred,y_true).item()])
-        
-        # save the trained model weights at each epoch
-        model_weights_path = base_dir+'training/model_weights_epoch%i_seed%s.pt'%(i, seed)
-        torch.save(model.state_dict(), model_weights_path)
+        epoch_loss.append([np.mean(batch_loss), test_loss])
+        #epoch_loss.append(batch_loss)
+
         print('Done training epoch %i'%i)
     
     # save the loss arrays for plotting
-    with open(base_dir+'training/train_loss_%iepochs_seed%s.npy'%(num_epochs,seed), 'wb') as f:
+    with open(base_dir+'training/train_loss_%iepochs_seed%s_batch%i.npy'%(num_epochs,seed,batch_size), 'wb') as f:
         np.save(f, np.array(epoch_loss))
         
     print('Done.')
