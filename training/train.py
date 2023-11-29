@@ -29,8 +29,8 @@ loss = nn.CrossEntropyLoss()
 optimizer = torch.optim.Adam(model.parameters(), lr=0.001)#, momentum=0.9)
 
 # from extrernal notebook, found which essays had atleast 1000 words
-with open('human_wc.npy','rb') as f:
-    wc = np.load(f)
+#with open('human_wc.npy','rb') as f:
+#    wc = np.load(f)
 
 
 def load_data(tensor_path='data/train_human_tensor.pt', metrics_path = 'data/train_human_metrics.csv', N_metrics = 5):
