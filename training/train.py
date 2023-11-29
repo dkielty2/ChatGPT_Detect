@@ -20,6 +20,9 @@ from pytorch_model import Classifier
 model = Classifier(use_LSTM=True,N_metrics=5)
 model = model.to(device)# put it on gpu
 
+# define loss function
+loss = nn.CrossEntropyLoss()
+
 # Optimizers specified in the torch.optim package
 optimizer = torch.optim.Adam(model.parameters(), lr=0.001)#, momentum=0.9)
 
@@ -44,12 +47,12 @@ def get_data():
     # load human 
     tensors1,met1 = load_data(tensor_path=base_dir+'data/train_human_tensor.pt', metrics_path = base_dir+'data/train_human_metrics.csv', N_metrics = 5)
     # first col is GPT, second is human
-    y1 = torch.cat((torch.zeros((1,len(tensors)) ), torch.ones((1,len(tensors)) ))).T
+    y1 = torch.cat((torch.zeros((1,len(tensors1)) ), torch.ones((1,len(tensors1)) ))).T
     
     # load GPT
     tensors2,met2 = load_data(tensor_path=base_dir+'data/train_GPT_tensor.pt', metrics_path = base_dir+'data/train_GPT_metrics.csv', N_metrics = 5)
     # first col is GPT, second is human
-    y2 = torch.cat((torch.ones((1,len(tensors)) ), torch.zeros((1,len(tensors)) ))).T
+    y2 = torch.cat((torch.ones((1,len(tensors2)) ), torch.zeros((1,len(tensors2)) ))).T
     
     tensors = tensors1+tensors2
     met = np.concatenate((met1,met2), axis=0)
@@ -65,7 +68,7 @@ def run_model(tensor_list, met_arr,inds):
     x_text.requires_grad = True
     x_text = x_text.to(device)
     # extract the normalized metrics
-    x_met = torch.from_numpy(met_arr[batch_inds]).float()
+    x_met = torch.from_numpy(met_arr[inds]).float()
     x_met.requires_grad = True
     x_met = x_met.to(device)
 
@@ -134,10 +137,10 @@ if __name__=='__main__':
     epoch_loss = []
     for i in range(num_epochs):
         # do a whole epoch of training
-        batch_loss = train_epoch(tensor_list, met_arr, y, train_inds, batch_size = batch_size)
+        batch_loss = train_epoch(tensor_list, metrics, y, train_inds, batch_size = batch_size)
         
         # get prediction from test set
-        y_pred = run_model(tensor_list, met_arr,test_inds)
+        y_pred = run_model(tensor_list, metrics,test_inds)
         y_true=y[test_inds]
         
         # save epoch loss
