@@ -6,11 +6,16 @@ import os
 from preprocessing import preprocess,  metrics, w2v
 remap = {'a':'an', 'and':'also', 'of':'in', 'to':'at'}
 
+base_dir = '../'
 def run(filepath, outpath):
     # read the raw text file
     print('opening the file:', filepath)
-    with open(filepath, 'r', encoding='utf-8') as file:
-        text = file.read()
+    try:
+        with open(filepath, 'r', encoding='utf-8') as file:
+            text = file.read()
+    except:
+        with open(filepath, 'r', encoding='cp437') as file:
+            text = file.read()
     
     # extract metrics then do preprocessing
     met = metrics(text)
@@ -46,8 +51,8 @@ def run(filepath, outpath):
     return torch.from_numpy(vecs).reshape(-1,300)
 
 if __name__=='__main__': # took about an hour to run on all the human training essays
-    texts_dir = 'data/train/'
-    out_file = 'data/train_human_metrics.csv'
+    texts_dir = base_dir+'data/GPT_essays/'
+    out_file = base_dir+'data/train_GPT_metrics.csv'
     fnames = os.listdir(texts_dir)
     
     
@@ -61,5 +66,5 @@ if __name__=='__main__': # took about an hour to run on all the human training e
         Tensor_list.append(tensor_form)
     
     
-    torch.save(Tensor_list, 'data/train_tensor.pt')
+    torch.save(Tensor_list, base_dir+'data/train_GPT_tensor.pt')
     print('Done!')

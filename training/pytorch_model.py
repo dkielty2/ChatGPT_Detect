@@ -34,7 +34,7 @@ class Classifier(nn.Module):
         
         # concatenate
         if self.useLSTM:
-            x2 = torch.cat((text_out[1][0][0], metrics),axis=1)
+            x2 = torch.cat((text_out[1][0][0], metrics), axis=1)
         else:
             x2 = torch.cat((text_out[1][0], metrics),axis=1)
         # text_out[1] is the final hidden state for each element in the batch.
