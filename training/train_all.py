@@ -154,23 +154,10 @@ def train_epoch(tensor_list, met_tensor, y, train_inds, batch_size = 50):
         batch_num+=1
     return np.array(batch_loss)
 
-def test_pred(tensor_list, met_tensor, inds):
-    """
-    The prediction arr is too damn big, 
-    so we'll just loop thru it
-    """
-    ypreds = []
-    for i in inds:
-        ypred = run_model(tensor_list, met_tensor,np.array([i]))
-        ypreds.append(ypred)
-        torch.cuda.empty_cache()
-    
-    return torch.cat(ypreds, axis=0)
-
 if __name__=='__main__':
-    seed = 8675309 # for train test splitting
+    seed = 6287 # for train test splitting
     num_epochs = 15
-    batch_size = 20
+    batch_size = 10
     # there are some essays with a lot of words, which takes up a lot of memory
     
     # load data

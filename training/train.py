@@ -49,7 +49,7 @@ def load_data(tensor_path='data/train_human_tensor.pt', metrics_path = 'data/tra
 
 
 def get_data():
-    
+    torch.cuda.empty_cache()
     # load human 
     tensors1,met1 = load_data(tensor_path=base_dir+'data/train_human_tensor.pt', metrics_path = base_dir+'data/train_human_metrics.csv', N_metrics = 5)
     # first col is GPT, second is human
@@ -171,9 +171,9 @@ def test_pred_loss(tensor_list, met_tensor,y, test_inds):
     return L.item()
 
 if __name__=='__main__':
-    seed = 8675309 # for train test splitting
+    seed = 6287 # for train test splitting
     num_epochs = 15
-    batch_size = 25
+    batch_size = 5
     # there are some essays with a lot of words, which takes up a lot of memory
     
     # load data
