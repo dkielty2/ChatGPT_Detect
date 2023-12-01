@@ -13,5 +13,5 @@ Please note: This is a temporary server so the application may not be accessible
 - training : all work used for training the model
 
 ## Model Architecture
-![image](diagram.png)
+![diagram image](./diagram.png)
 
