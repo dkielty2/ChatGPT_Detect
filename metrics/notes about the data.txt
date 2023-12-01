@@ -1,0 +1,36 @@
+DATA NOTES
+
+human:
+- random jumps, unexpected twists in writing
+- typos
+- there are some essays analyzing a piece of text (they say things like "the author claims that...")
+- there are some essays addressing the principal or a senator (they start with "dear senator" and end with "yours sincerely")
+- no essay titles
+
+
+chat gpt:
+- no typos
+- if the promt is "write as a 15 year old" chat gpt mentions being 15
+- if the promt is "write like you're in grade 6" chat gpt mentions grade 6
+- most paragraphs start with "moreover", "furthermore", "on the flip side", "in conclusion", "firstly", "additionally", etc - should we do some analysis measuring common chat gpt phrases?
+- chat gpt makes up a title it includes at the beginning of the essay
+- chat gpt includes the title even if I write "do not include the title of the essay."
+- if I say "address the principal" chat gpt will include their address and name - solved below
+
+
+notes:
+- I worry our detector will be biased against human good quality essays
+- we probably need to cut the title of the essay in the machine generated data
+- would be good to extract a topic title from the other essays
+- would be good to have encoding for whether the essay is addressing someone or not
+- would be good to have encoding for whether it is a critical analysis text (so mentioning "the author")
+
+
+CURRENT BEST PROMPT:
+write an essay on the topic of __insert topic title___ that a high schooler would write with up to __insert number of__ words.
+1) write this essay in the form of an analyisis of another author's text.
+2) write this essay addressing __insert the person addressed___. only include the essay text.
+
+I am assuming this prompt would be encoded for 1) and 2)
+If we don't want to encode, then use:
+write an essay on the topic of __insert topic title___ that a high schooler would write with up to __insert number of__ words.
