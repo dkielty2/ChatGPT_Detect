@@ -1,7 +1,7 @@
 # ChatGPT_Detect
 
 ## Application Link:
-The current form of the application is available at this link:
+The current form of the application is available at this link:[link](link)
 
 Please note: This is a temporary server so the application may not be accessible long-term after the completion of this project.
 
@@ -14,4 +14,8 @@ Please note: This is a temporary server so the application may not be accessible
 
 ## Model Architecture
 ![diagram image](./diagram.png)
+
+## Additional Python dependencies
+Beyond the default anaconda3 installation, the remaining required packages can be installed using:
+```pip install torch n2w```
 
