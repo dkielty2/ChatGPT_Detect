@@ -1,0 +1,85 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChatGPT Detector</title>
+    <style>
+        body {
+            background-color: black; 
+            color: white;
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh; 
+            margin: 0;
+        }
+
+        h1 {
+            color: white;
+        }
+
+        form {
+            background-color: rgba(255, 255, 255, 0.9); 
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            width: 80%; 
+            max-width: 400px; 
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            resize: vertical;
+        }
+
+        button {
+            background-color: green; 
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease; 
+        }
+
+        button:hover {
+            background-color: #27ae60; 
+        }
+
+        p {
+            margin-top: 20px;
+            font-weight: bold;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>ChatGPT Detector</h1>
+    <form method="post">
+        <label for="input_data" style="color: red;">Insert text:</label>
+        <textarea id="input_data" name="input_data" rows="10" cols="50" required></textarea>
+        <button type="submit">Bot or Not?</button>
+    </form>
+
+    {% if result1 %}
+        <p>{{ result1 }}</p>
+    {% endif %}
+
+    {% if result2 %}
+        <p>{{ result2 }}</p>
+    {% endif %}
+</body>
+</html>
