@@ -1,10 +1,6 @@
 # ChatGPT_Detect
 
 ## Using the Application
-### Application Link
-The current form of the application is available at this link:[http://makemake.wifi.cmu.edu/ChatGPT_Detect/application/](http://makemake.wifi.cmu.edu/ChatGPT_Detect/application/)
-
-**Please note:** This is a temporary server so the application may not be accessible long-term after the completion of this project.
 
 ### Running the application locally
 The application can alternatively be run on your local machine.
@@ -18,6 +14,9 @@ $ cd application/
 $ source source_this.sh
 ```
 **Please note:** The first time this is run, multiple datasets from the natural language toolkit (nltk) and pytorch may be installed. This means startup time is significantly longer for the first run.
+
+### Application Link
+Unfortunately, due to computation and time constraints, we were unable to set up a server to host this application for all viewers to access. Should the time come when we have better access to a server that isn't an iMac from 2009, we will do our best to host it there.
 
 ## Repository Layout
 - application : code required to run the final application
