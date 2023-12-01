@@ -3,14 +3,16 @@
 ## Using the Application
 
 ### Running the application locally
-The application can alternatively be run on your local machine.
+The application can easily be run on your local machine!
 #### Additional Python dependencies
 Beyond the default anaconda3 installation, the remaining required packages can be installed using:
+
 ```pip install torch torchvision contractions n2w```
+
 #### Run
-Once the additional dependencies are installed, the app can be run by entering the following into your terminal
+Once the additional dependencies are installed, the app can be run by entering the following into your terminal:
 ```
-$ cd application/
+$ cd ChatGPT_Detect/application/
 $ source source_this.sh
 ```
 **Please note:** The first time this is run, multiple datasets from the natural language toolkit (nltk) and pytorch may be installed. This means startup time is significantly longer for the first run.
