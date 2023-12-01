@@ -17,5 +17,5 @@ Please note: This is a temporary server so the application may not be accessible
 
 ## Additional Python dependencies
 Beyond the default anaconda3 installation, the remaining required packages can be installed using:
-```pip install torch n2w```
+```pip install torch torchvision contractions n2w```
 
